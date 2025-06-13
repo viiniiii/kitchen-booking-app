@@ -13,9 +13,13 @@ router.get('/', (req, res) => {
 });
 
 router.post("/", async (req, res) => {
- const { kitchenId, name, email, date, time } = req.body;
+  const { kitchenId, name, email, date, time, hours, totalPrice } = req.body;
 
-  if (!kitchenId || !name || !email || !date || !time) {
+  // Validate presence of all required fields
+  if (
+    !kitchenId || !name || !email || !date || !time ||
+    typeof hours === "undefined" || typeof totalPrice === "undefined"
+  ) {
     return res.status(400).json({ error: 'Missing required fields' });
   }
 
@@ -26,6 +30,8 @@ router.post("/", async (req, res) => {
     email,
     date,
     time,
+    hours,
+    totalPrice,
     createdAt: new Date().toISOString()
   };
 
