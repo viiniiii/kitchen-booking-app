@@ -72,13 +72,15 @@ if (selectedKitchen) {
 }
 
 
-  return (
+ return (
+  <div className="min-h-screen bg-white text-gray-900">
     <KitchensPage
       kitchens={kitchens}
       loading={loading}
       onBookNow={setSelectedKitchen}
     />
-  );
+  </div>
+);
 };
 
 export default App;
