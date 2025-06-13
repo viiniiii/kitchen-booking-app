@@ -29,58 +29,58 @@ const App = () => {
   }, []);
 
   const handleSubmitBooking = (bookingData) => {
-  setBooking(bookingData);
-  setShowConfirmation(true);
-  setSelectedKitchen(null);    
-  setSelectedDate(null);
-};
+    setBooking(bookingData);
+    setShowConfirmation(true);
+    setSelectedKitchen(null);
+    setSelectedDate(null);
+  };
 
-if (showConfirmation && booking) {
-  return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="max-w-4xl mx-auto py-8 px-6">
-        <ConfirmOverview />
-        <BookingSummary booking={booking} />
-        <button
-          className="mt-6 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 font-medium"
-          onClick={() => {
-            setShowConfirmation(false);
-            setBooking(null);
-          }}
-        >
-          Book Another Kitchen
-        </button>
+  if (showConfirmation && booking) {
+    return (
+      <div className="min-h-screen bg-white text-gray-900">
+        <div className="max-w-4xl mx-auto py-8 px-6">
+          <ConfirmOverview />
+          <BookingSummary booking={booking} />
+          <button
+            className="mt-6 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 font-medium"
+            onClick={() => {
+              setShowConfirmation(false);
+              setBooking(null);
+            }}
+          >
+            Book Another Kitchen
+          </button>
+        </div>
       </div>
+    );
+  }
+
+  if (selectedKitchen) {
+    return (
+      <div className="min-h-screen bg-white text-gray-900">
+        <BookingPage
+          kitchen={selectedKitchen}
+          selectedDate={selectedDate}
+          setSelectedDate={setSelectedDate}
+          onBack={() => {
+            setSelectedKitchen(null);
+            setSelectedDate(null);
+          }}
+          onSubmitBooking={handleSubmitBooking}
+        />
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-white text-gray-900">
+      <KitchensPage
+        kitchens={kitchens}
+        loading={loading}
+        onBookNow={setSelectedKitchen}
+      />
     </div>
   );
-}
-
-
-if (selectedKitchen) {
-  return (
-    <BookingPage
-      kitchen={selectedKitchen}
-      selectedDate={selectedDate}
-      setSelectedDate={setSelectedDate}
-      onBack={() => {
-        setSelectedKitchen(null);
-        setSelectedDate(null);
-      }}
-      onSubmitBooking={handleSubmitBooking} 
-    />
-  );
-}
-
-
- return (
-  <div className="min-h-screen bg-white text-gray-900">
-    <KitchensPage
-      kitchens={kitchens}
-      loading={loading}
-      onBookNow={setSelectedKitchen}
-    />
-  </div>
-);
 };
 
 export default App;
