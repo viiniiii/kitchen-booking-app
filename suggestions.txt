@@ -1,14 +1,25 @@
 Kitchen Booking App – Suggested Improvements
 
-- Fix the time input to use time slots based on kitchen’s available slots for the selected day.
-- Prevent user from booking hours that are already booked (show only available time slots for that day).
-- When user selects a date via the <input type="date">, synchronize the selected date with the main calendar component.
-- After submitting a booking, auto-refresh the availability calendar to show updated slots.
-- Disable selection of past times (not just past dates) in the time input if booking is for today.
-- Add error messages for incomplete forms (e.g. missing name/email) before allowing confirmation.
-- Show booked/unavailable hours for a given day if user clicks on a date.
-- Show upcoming bookings for the user (my bookings section).
-- Allow user to filter kitchens by date range availability (e.g. "show kitchens available this Friday").
-- Send confirmation email on booking.
-- Add pagination and add more kitchens.
-- Show animated success/failure icons on booking confirmation.
+1.Booking Logic Improvements
+- Fix time input to use time slots based on kitchen’s availability.
+- Prevent users from booking already-booked hours.
+- Disable selection of past times (not just past dates) if booking is for today.
+- Add error messages for incomplete forms before allowing confirmation.
+- Show booked/unavailable hours when a date is selected.
+- Would improve the logical relationships between booking and kitchens
+- When creating a booking for a kitchen, I would also add the logic to add the bookings in the booked array of the corresponding kitchen.
+
+2.Calendar and Date Selection
+- Sync selected date from <input type="date"> with the calendar component.
+- Auto-refresh availability calendar after submitting a booking.
+- Allow filtering kitchens by availability in a selected date range (e.g. "show kitchens available this Friday").
+
+3.User Features
+- Show upcoming bookings in a "My Bookings" section.
+- Send confirmation email after a booking.
+
+4.UI and Design Enhancements
+- Show animated success/failure icons after booking confirmation.
+- Add pagination and load more kitchens.
+- Fix minor responsive design issues.
+- Improve the visual design — current layout is a bit plain.

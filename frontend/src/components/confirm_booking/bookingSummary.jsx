@@ -1,7 +1,7 @@
 import React from "react";
 import { Calendar, Clock, Check } from "lucide-react";
 
-// Shows a summary of the confirmed booking details
+// Summary of the confirmed booking details
 const BookingSummary = ({ booking }) => {
   if (!booking || !booking.kitchen) return null;
 

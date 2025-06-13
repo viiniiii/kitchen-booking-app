@@ -28,3 +28,14 @@ npm install           # Install frontend dependencies
 npm run dev           # Start the frontend development server
 ```
 Now the frontend server is running on: **http://localhost:5173**
+
+### 4. Running the tests (frontend or backend)
+```bash
+cd frontend 
+npm test
+```
+and
+
+```bash
+cd backend
+npm test

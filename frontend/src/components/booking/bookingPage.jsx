@@ -46,7 +46,7 @@ const BookingPage = ({
             </div>
           </div>
         </div>
-        {/* CALENDAR — select date first */}
+        {/* Calendar — select date first */}
         <AvailabilityCalendar
           kitchen={kitchen}
           onDateSelect={setSelectedDate}
