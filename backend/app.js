@@ -10,7 +10,7 @@ const app = express();
 
 const allowedOrigins = [
   'http://localhost:5173', 
-  'https://kitchen-booking-frontend.onrender.com/', 
+  'https://kitchen-booking-frontend.onrender.com', 
 ];
 
 app.use(cors({
