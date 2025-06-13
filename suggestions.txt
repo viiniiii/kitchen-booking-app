@@ -1,0 +1,14 @@
+Kitchen Booking App – Suggested Improvements
+
+- Fix the time input to use time slots based on kitchen’s available slots for the selected day.
+- Prevent user from booking hours that are already booked (show only available time slots for that day).
+- When user selects a date via the <input type="date">, synchronize the selected date with the main calendar component.
+- After submitting a booking, auto-refresh the availability calendar to show updated slots.
+- Disable selection of past times (not just past dates) in the time input if booking is for today.
+- Add error messages for incomplete forms (e.g. missing name/email) before allowing confirmation.
+- Show booked/unavailable hours for a given day if user clicks on a date.
+- Show upcoming bookings for the user (my bookings section).
+- Allow user to filter kitchens by date range availability (e.g. "show kitchens available this Friday").
+- Send confirmation email on booking.
+- Add pagination and add more kitchens.
+- Show animated success/failure icons on booking confirmation.
